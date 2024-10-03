@@ -94,6 +94,11 @@ p, a {
   color: white;
   padding: 15px 25px;
   border-radius: 2rem;
+  -webkit-transition: 0.3s ease all;
+  transition: 0.3s ease all;
+}
+.button:hover {
+  background-color: #3B7EC0;
 }
 
 .first__screen {
@@ -119,6 +124,21 @@ p, a {
 .first__screen .container header .header__links a {
   color: white;
   margin-right: 25px;
+  position: relative;
+}
+.first__screen .container header .header__links a:after {
+  content: "";
+  position: absolute;
+  background-color: #fff;
+  width: 0;
+  left: 0;
+  height: 3px;
+  top: 20px;
+  -webkit-transition: 0.4s ease all;
+  transition: 0.4s ease all;
+}
+.first__screen .container header .header__links a:hover:after {
+  width: 100%;
 }
 .first__screen .container .first__screen__content {
   width: 500px;
@@ -267,6 +287,11 @@ p, a {
   font-size: 16px;
   border-radius: 2rem;
   text-align: center;
+  -webkit-transition: 0.3s ease all;
+  transition: 0.3s ease all;
+}
+.products .container .products__content .product .product__main a:hover {
+  background-color: #3B7EC0;
 }
 .products .container .products__content .product img {
   display: block;
@@ -500,6 +525,8 @@ footer .container .footer__main .send__form input {
   border: none;
   border-bottom: 2px solid white;
   margin-bottom: 25px;
+  color: white;
+  font-size: 24px;
 }
 footer .container .footer__main .send__form button {
   border: none;
@@ -528,6 +555,9 @@ footer .container .footer__main .send__form button:hover {
   }
   .products .container .products__content .product .product__main {
     width: 45%;
+  }
+  .reviews .container {
+    padding-top: 50px;
   }
   .reviews .container h2 {
     margin-bottom: 150px;
@@ -575,6 +605,9 @@ footer .container .footer__main .send__form button:hover {
   }
 }
 @media screen and (max-width: 970px) {
+  .reviews .container {
+    padding: 50px 0;
+  }
   .reviews .container .title {
     margin-bottom: 50px;
   }
