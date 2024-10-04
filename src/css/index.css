@@ -408,6 +408,8 @@ p, a {
 .reviews .container .reviews__content .review p {
   font-size: 24px;
   font-weight: 500;
+  -webkit-transition: 0.3s ease all;
+  transition: 0.3s ease all;
 }
 .reviews .container .reviews__content .review .review__bottom {
   display: -webkit-box;
@@ -423,6 +425,8 @@ p, a {
 .reviews .container .reviews__content .review .review__bottom p {
   font-weight: 700;
   font-size: 20px;
+  -webkit-transition: 0.3s ease all;
+  transition: 0.3s ease all;
 }
 
 .facts .container .fact {
