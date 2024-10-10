@@ -20,10 +20,8 @@ peoplesReview.forEach(peopleReview => {
 
       let idReview = peopleReview.getAttribute("review-id");
 
-      // Remove all active class
-      peoplesReview.forEach(peopleReview => peopleReview.classList.remove("active"));
-      // Change opacity image
-      peopleReview.classList.add("active");
+      // Toggle classes in images
+      peoplesReview.forEach(peopleReview => peopleReview.classList.toggle("active"));
 
       // Fade review content
       review__text.style.opacity = 0;
@@ -92,7 +90,6 @@ function addItem(id) {
 
     // Take info from object
     let product = orderProducts.find(product => product.id === id);
-    console.log(product);
 
     // Create container
     let item = document.createElement("div");
@@ -131,8 +128,8 @@ function addItem(id) {
       itemDecrease.classList.add("active");
 
     itemDecrease.textContent = "-";
-    itemDecrease.addEventListener("click", (event) => {
-      decreaseItem(event, id);
+    itemDecrease.addEventListener("click", () => {
+      changeCountItem(id, -1);
     });
 
     // Create item count
@@ -145,7 +142,7 @@ function addItem(id) {
     itemIncrease.classList.add("increase");
     itemIncrease.textContent = "+";
     itemIncrease.addEventListener("click", () => {
-      increaseItem(id);
+      changeCountItem(id, 1);
     });
 
     // Create item price
@@ -176,38 +173,13 @@ function addItem(id) {
   showTotalPrice()
 }
 
-// Increase item count when click to a button
-function increaseItem(id) {
-
-  // Increase item count in array
-  let product = orderProducts.find(product => product.id === id);
-  product.count++;
-
-  // Find tag with total price in item
-  let priceTexts = document.querySelectorAll(".price");
-  let priceText = Array.from(priceTexts).find(item => item.getAttribute("item-id") == id);
-
-  let parentContainer = priceText.closest(".item__counter");
-
-  // Find tag with count item
-  let countText = parentContainer.querySelector(".item__count");
-
-  // Show new price and count
-  countText.textContent = product.count;
-  priceText.textContent = product.count * product.price + "$";
-  showTotalPrice();
-
-  // Unlock decrease button
-  let decreaseBtn = parentContainer.querySelector(".decrease");
-  decreaseBtn.classList.add("active");
-}
-
-
-function decreaseItem(event, id) {
-
-  // Decrease item count in array
+function changeCountItem(id, count){
+  
+  // Find item with current id
   let product = orderProducts.find(product => product.id == id);
-  product.count--;
+
+  // Change count product
+  product.count = product.count + count;
 
   // Find tag with total price in item
   let priceTexts = document.querySelectorAll(".price");
@@ -215,19 +187,21 @@ function decreaseItem(event, id) {
 
   let parentContainer = priceText.closest(".item__counter");
 
-  // Find tag with count item
-  let countText = parentContainer.querySelector(".item__count");
-
-  // Show new price and count
-
-  countText.textContent = product.count;
-  priceText.textContent = product.count * product.price + "$";
+  //Show new price and count
+  priceText.textContent = product.price * product.count + "$";
+  parentContainer.querySelector(".item__count").textContent = product.count;
 
   showTotalPrice();
 
-  if (product.count == 1)
-    event.target.classList.remove("active");
+  // Manipulation with decrease button
+  let decreaseBtn = parentContainer.querySelector(".decrease");
 
+  if(product.count > 1){
+    decreaseBtn.classList.add("active");
+  }
+  else{
+    decreaseBtn.classList.remove("active");
+  }
 }
 
 function deleteItem(event, id) {
