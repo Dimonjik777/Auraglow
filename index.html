@@ -16,7 +16,7 @@
 
       <div class="shopping__bottom">
         <p class="total">Total: 80$</p>
-        <button class="submit" onclick="makeOrder()">Make a order</button>
+        <button class="submit">Make a order</button>
       </div>
     </div>
     <img class="shopping__cart" src="src/img/shopping cart.png" alt="">
@@ -91,7 +91,7 @@
           <div class="product__main">
             <h3>Complete LED Whitening Kit</h3>
             <img src="src/img/LED.png" alt="">
-            <a onclick="addItem(0)" class="add__item">Add To Cart</a>
+            <a data-item-id="0" class="add__item">Add To Cart</a>
           </div>
         </div>
         <div class="product">
@@ -101,7 +101,7 @@
           <div class="product__main">
             <h3>Whitening Gel</h3>
             <img src="src/img/gel.png" alt="">
-            <a onclick="addItem(1)" class="add__item">Add To Cart</a>
+            <a data-item-id="1" class="add__item">Add To Cart</a>
           </div>
         </div>
       </div>
@@ -212,7 +212,7 @@
     </div>
   </footer>
 
-  <script src="src/js/index.js"></script>
+  <script type="module" src="src/js/index.js"></script>
 </body>
 
 </html>
