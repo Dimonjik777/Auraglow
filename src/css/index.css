@@ -101,6 +101,157 @@ p, a {
   background-color: #3B7EC0;
 }
 
+.shopping {
+  position: fixed;
+  left: 75vw;
+  top: 35%;
+  z-index: 3;
+  pointer-events: none;
+}
+.shopping__menu {
+  position: relative;
+  top: 20px;
+  opacity: 0;
+  -webkit-transition: 0.3s ease all;
+  transition: 0.3s ease all;
+  z-index: 5;
+  -webkit-box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+          box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: #fff;
+  width: 350px;
+  height: 525px;
+  padding: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.shopping__menu.active {
+  top: 0;
+  opacity: 1;
+}
+.shopping__menu button {
+  border: none;
+  background-color: white;
+}
+.shopping__menu .item {
+  margin-bottom: 25px;
+  width: 300px;
+}
+.shopping__menu .item__main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.shopping__menu .item__main h3 {
+  font-size: 20px;
+  font-weight: 400;
+}
+.shopping__menu .item__main img {
+  margin-right: 15px;
+}
+.shopping__menu .item__main .delete__item {
+  cursor: pointer;
+}
+.shopping__menu .item .item__counter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 15px;
+}
+.shopping__menu .item .item__counter .decrease,
+.shopping__menu .item .item__counter .increase {
+  background-color: #FED097;
+  border-radius: 10px;
+  width: 30px;
+  height: 30px;
+  font-size: 24px;
+  cursor: pointer;
+  -webkit-transition: 0.3s ease all;
+  transition: 0.3s ease all;
+}
+.shopping__menu .item .item__counter .decrease:hover,
+.shopping__menu .item .item__counter .increase:hover {
+  background-color: #FFE0BA;
+}
+.shopping__menu .item .item__counter .decrease {
+  margin-right: 15px;
+  opacity: 0.6;
+  pointer-events: none;
+  cursor: inherit;
+}
+.shopping__menu .item .item__counter .item__count {
+  margin-right: 15px;
+}
+.shopping__menu .item .item__counter .increase {
+  margin-right: 15px;
+}
+.shopping__menu .item .item__counter .decrease.active {
+  opacity: 1;
+  cursor: pointer;
+  pointer-events: all;
+}
+.shopping__menu .item .item__counter .decrease.active:hover {
+  background-color: #FFE0BA;
+}
+.shopping__menu .shopping__bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+.shopping__menu .shopping__bottom .total {
+  font-weight: 500;
+  font-size: 24px;
+  margin-top: 15px;
+}
+.shopping__menu .shopping__bottom .submit {
+  background-color: #225B93;
+  color: white;
+  font-size: 24px;
+  width: 100%;
+  border-radius: 2rem;
+  padding: 10px 0;
+  margin-top: 15px;
+  -webkit-transition: 0.3s ease all;
+  transition: 0.3s ease all;
+  cursor: pointer;
+}
+.shopping__menu .shopping__bottom .submit:hover {
+  background-color: #3B7EC0;
+}
+.shopping__cart {
+  pointer-events: all;
+  cursor: pointer;
+  position: relative;
+  left: 80%;
+  top: 20px;
+  z-index: 3;
+}
+
 .first__screen {
   background: url("../img/first__screen.png") no-repeat center;
   padding-top: 15px;
@@ -289,6 +440,7 @@ p, a {
   text-align: center;
   -webkit-transition: 0.3s ease all;
   transition: 0.3s ease all;
+  cursor: pointer;
 }
 .products .container .products__content .product .product__main a:hover {
   background-color: #3B7EC0;
@@ -303,6 +455,9 @@ p, a {
 }
 .products .container .products__content .product:last-child .product__side {
   background: url("../img/accessories.png") no-repeat center;
+}
+.products .container .products__content .product:last-child .product__main h3::after {
+  content: "50$";
 }
 
 .quote {
@@ -550,6 +705,11 @@ footer .container .footer__main .send__form button:hover {
   color: #031622;
 }
 
+@media screen and (max-width: 1510px) {
+  .shopping {
+    left: 70vw;
+  }
+}
 @media screen and (max-width: 1320px) {
   .container {
     width: 1000px;
@@ -577,6 +737,16 @@ footer .container .footer__main .send__form button:hover {
   }
   .facts .container .fact:first-child .fact__info {
     left: 57%;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .shopping {
+    left: 65vw;
+  }
+}
+@media screen and (max-width: 1080px) {
+  .shopping {
+    left: 60vw;
   }
 }
 @media screen and (max-width: 1070px) {
@@ -627,6 +797,11 @@ footer .container .footer__main .send__form button:hover {
     margin-bottom: 25px;
   }
 }
+@media screen and (max-width: 950px) {
+  .shopping {
+    left: 55vw;
+  }
+}
 @media screen and (max-width: 940px) {
   .facts .container .fact {
     -webkit-box-pack: center;
@@ -653,6 +828,11 @@ footer .container .footer__main .send__form button:hover {
     width: auto;
   }
 }
+@media screen and (max-width: 850px) {
+  .shopping {
+    left: 50vw;
+  }
+}
 @media screen and (max-width: 800px) {
   .reviews .container .reviews__content .review__peoples {
     -webkit-box-orient: vertical;
@@ -675,6 +855,11 @@ footer .container .footer__main .send__form button:hover {
   .products .container .products__content .product .product__main img {
     width: 100%;
     padding: 25px 0;
+  }
+}
+@media screen and (max-width: 760px) {
+  .shopping {
+    left: 45vw;
   }
 }
 @media screen and (max-width: 736px) {
@@ -704,6 +889,29 @@ footer .container .footer__main .send__form button:hover {
     padding-top: 35px;
   }
 }
+@media screen and (max-width: 690px) {
+  .shopping {
+    left: 40vw;
+  }
+}
+@media screen and (max-width: 630px) {
+  .shopping {
+    left: 35vw;
+  }
+}
+@media screen and (max-width: 600px) {
+  .shopping {
+    left: 35vw;
+  }
+}
+@media screen and (max-width: 580px) {
+  .shopping {
+    left: 20vw;
+  }
+  .shopping .shopping__menu {
+    top: -100px;
+  }
+}
 @media screen and (max-width: 572px) {
   .first__screen .container header img {
     width: 100px;
@@ -730,5 +938,10 @@ footer .container .footer__main .send__form button:hover {
   }
   .promises .container .promises__content .promises__row .promise {
     padding-top: 25px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .shopping {
+    left: 12vw;
   }
 }

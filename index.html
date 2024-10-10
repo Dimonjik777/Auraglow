@@ -10,6 +10,18 @@
 </head>
 
 <body>
+
+  <div class="shopping">
+    <div class="shopping__menu">
+
+      <div class="shopping__bottom">
+        <p class="total">Total: 80$</p>
+        <button class="submit" onclick="makeOrder()">Make a order</button>
+      </div>
+    </div>
+    <img class="shopping__cart" src="src/img/shopping cart.png" alt="">
+  </div>
+
   <div class="first__screen">
     <div class="container">
       <header>
@@ -79,7 +91,7 @@
           <div class="product__main">
             <h3>Complete LED Whitening Kit</h3>
             <img src="src/img/LED.png" alt="">
-            <a href="#">Add To Cart</a>
+            <a onclick="addItem(0)" class="add__item">Add To Cart</a>
           </div>
         </div>
         <div class="product">
@@ -89,7 +101,7 @@
           <div class="product__main">
             <h3>Whitening Gel</h3>
             <img src="src/img/gel.png" alt="">
-            <a href="#">Add To Cart</a>
+            <a onclick="addItem(1)" class="add__item">Add To Cart</a>
           </div>
         </div>
       </div>
@@ -110,7 +122,8 @@
       <h2 class="title">Smiles of all styles love Auraglow</h2>
       <div class="reviews__content">
         <div class="review">
-          <p class="review__text">"I loved my smile before, and I love it more now! After a few treatments I saw noticeable result without
+          <p class="review__text">"I loved my smile before, and I love it more now! After a few treatments I saw
+            noticeable result without
             the sensitiviye I`ve experienced with other products."</p>
           <div class="review__bottom">
             <p class="client__name">Nicole P.</p>
@@ -199,7 +212,7 @@
     </div>
   </footer>
 
-  <script src="src/js/reviews.js"></script>
+  <script src="src/js/index.js"></script>
 </body>
 
 </html>

@@ -1,3 +1,10 @@
+@media screen and (max-width: 1510px){
+
+  .shopping{
+    left: 70vw;
+  }
+}
+
 @media screen and (max-width: 1320px) {
 
   .container {
@@ -81,6 +88,22 @@
         }
       }
     }
+  }
+}
+
+@media screen and (max-width: 1280px){
+
+  .shopping{
+
+    left: 65vw;
+  }
+}
+
+@media screen and (max-width: 1080px){
+
+  .shopping{
+
+    left: 60vw;
   }
 }
 
@@ -193,6 +216,14 @@
 
 }
 
+@media screen and (max-width: 950px){
+
+  .shopping{
+
+    left: 55vw;
+  }
+}
+
 @media screen and (max-width: 940px) {
 
   .facts {
@@ -247,6 +278,14 @@
   }
 }
 
+@media screen and (max-width: 850px){
+
+  .shopping{
+
+    left: 50vw;
+  }
+}
+
 @media screen and (max-width: 800px) {
 
   .reviews {
@@ -289,6 +328,14 @@
         }
       }
     }
+  }
+}
+
+@media screen and (max-width: 760px){
+
+  .shopping{
+
+    left: 45vw;
   }
 }
 
@@ -348,6 +395,42 @@
     }
   }
 
+}
+
+@media screen and (max-width: 690px){
+
+  .shopping{
+
+    left: 40vw;
+  }
+}
+
+@media screen and (max-width: 630px){
+
+  .shopping{
+
+    left: 35vw;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  .shopping{
+
+    left: 35vw;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  
+  .shopping{
+
+    left: 20vw;
+
+    .shopping__menu{
+      top: -100px;
+    }
+  }
 }
 
 @media screen and (max-width: 572px) {
@@ -418,4 +501,12 @@
     }
   }
 
+}
+
+@media screen and (max-width: 480px) {
+  
+  .shopping{
+
+    left: 12vw;
+  }
 }

@@ -15,9 +15,156 @@
   border-radius: 2rem;
   transition: .3s ease all;
 
-  &:hover{
+  &:hover {
     background-color: #3B7EC0;
   }
+}
+
+.shopping {
+  position: fixed;
+  left: 75vw;
+  top: 35%;
+  z-index: 3;
+  pointer-events: none;
+
+  &__menu {
+
+    position: relative;
+    top: 20px;
+    opacity: 0;
+    transition: .3s ease all;
+    z-index: 5;
+
+    &.active {
+      top: 0;
+      opacity: 1;
+    }
+
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+
+    background-color: #fff;
+    width: 350px;
+    height: 525px;
+    padding: 25px;
+
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    flex-direction: column;
+
+    button {
+      border: none;
+      background-color: white;
+    }
+
+    .item {
+      margin-bottom: 25px;
+      width: 300px;
+
+      &__main {
+        @include flex;
+
+        h3 {
+          font-size: 20px;
+          font-weight: 400;
+        }
+
+        img {
+          margin-right: 15px;
+        }
+
+        .delete__item {
+          cursor: pointer;
+        }
+
+      }
+
+      .item__counter {
+        display: flex;
+        margin-top: 15px;
+
+        .decrease,
+        .increase {
+          background-color: $beige;
+          border-radius: 10px;
+          width: 30px;
+          height: 30px;
+          font-size: 24px;
+          cursor: pointer;
+          transition: .3s ease all;
+
+          &:hover {
+            background-color: #FFE0BA;
+          }
+        }
+
+        .decrease {
+          margin-right: 15px;
+          opacity: 0.6;
+          pointer-events: none;
+          cursor: inherit;
+        }
+
+        .item__count {
+          margin-right: 15px;
+        }
+
+        .increase {
+          margin-right: 15px;
+        }
+
+        .decrease.active {
+          opacity: 1;
+          cursor: pointer;
+          pointer-events: all;
+
+          &:hover {
+            background-color: #FFE0BA;
+          }
+        }
+      }
+    }
+
+    .shopping__bottom {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+
+      .total {
+        font-weight: 500;
+        font-size: 24px;
+        margin-top: 15px;
+      }
+
+      .submit {
+        background-color: $secondary;
+        color: white;
+        font-size: 24px;
+        width: 100%;
+        border-radius: 2rem;
+        padding: 10px 0;
+        margin-top: 15px;
+        transition: .3s ease all;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #3B7EC0;
+        }
+      }
+    }
+  }
+
+  &__cart {
+    pointer-events: all;
+    cursor: pointer;
+    position: relative;
+    left: 80%;
+    top: 20px;
+    z-index: 3;
+  }
+
 }
 
 .first__screen {
@@ -37,7 +184,7 @@
         margin-right: 25px;
         position: relative;
 
-        &:after{
+        &:after {
           content: "";
           position: absolute;
           background-color: #fff;
@@ -48,9 +195,9 @@
           transition: .4s ease all;
         }
 
-        &:hover{
+        &:hover {
 
-          &:after{
+          &:after {
             width: 100%;
           }
         }
@@ -146,7 +293,7 @@
     margin-top: 100px;
     margin-bottom: 150px;
 
-    .top__title{
+    .top__title {
       font-size: 18px;
       color: $secondary;
       font-weight: 700;
@@ -207,8 +354,9 @@
             border-radius: 2rem;
             text-align: center;
             transition: .3s ease all;
+            cursor: pointer;
 
-            &:hover{
+            &:hover {
 
               background-color: #3B7EC0;
             }
@@ -231,6 +379,12 @@
         &:last-child {
           .product__side {
             background: url("../img/accessories.png") no-repeat center;
+          }
+
+          .product__main {
+            h3::after {
+              content: "50$";
+            }
           }
         }
 
@@ -289,24 +443,24 @@
     .reviews__content {
       @include flex;
       position: relative;
-      
-      .review__peoples{
+
+      .review__peoples {
         display: flex;
         justify-content: space-between;
         width: 100%;
         align-items: center;
 
-      img {
-        opacity: 0.6;
-        cursor: pointer;
-        transition: .3s ease all;
+        img {
+          opacity: 0.6;
+          cursor: pointer;
+          transition: .3s ease all;
 
-        &.active {
-          opacity: 1;
-          cursor: auto;
+          &.active {
+            opacity: 1;
+            cursor: auto;
+          }
         }
       }
-    }
 
       .review {
         display: flex;
