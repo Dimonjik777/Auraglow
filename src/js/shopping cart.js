@@ -58,7 +58,7 @@ export function addItem(id) {
 
     // Create item image
     let itemImage = document.createElement("img");
-    itemImage.setAttribute("src", `../src/img/${product.img}`);
+    itemImage.setAttribute("src", `src/img/${product.img}`);
 
     // Create item title
     let itemTitle = document.createElement("h3");
